@@ -1,0 +1,84 @@
+/*
+CSS Conversation bubble reference:
+http://www.ilikepixels.co.uk/drop/bubbler/
+
+*/
+body{
+    background-image: url(background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#main_title{
+    margin-top: 20px;
+    text-align: center;
+    font-family: 'Marck Script', cursive;
+    text-shadow: 2px 3px #D8D0D0;
+}
+#message_window{
+    margin-top: -20px;
+    background-color: rgba(240, 248, 255, 0.67);
+    border-left: 2px solid #ccc;
+    border-right: 2px solid #ccc;
+    border-top: 2px solid #ccc;
+    height: 450px;
+    padding: 20px;
+    overflow-y: scroll;
+}
+#account{
+    text-align: right;
+}
+ul{
+    text-align: left !important;
+}
+i.large { 
+    font-size: 1.2rem;
+}
+.bubble_from
+{
+    position: relative;
+    width: 300px;
+    padding: 10px;
+    background: #5EB3FF;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.bubble_from:after 
+{
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 15px 15px 15px 0;
+    border-color: transparent #5EB3FF;
+    display: block;
+    width: 0;
+    z-index: 1;
+    left: -15px;
+    top: 12px;
+}
+.bubble_to
+{
+    position: relative;
+    width: 300px;
+    padding: 10px;
+    background: #C07ABE;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.bubble_to:after 
+{
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 15px 0 15px 15px;
+    border-color: transparent #C07ABE;
+    display: block;
+    width: 0;
+    z-index: 1;
+    right: -15px;
+    top: 12px;
+}
