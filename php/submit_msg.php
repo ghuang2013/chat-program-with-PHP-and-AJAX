@@ -2,7 +2,7 @@
 require_once('database_connect.php');
 session_start();
 
-if(isset($_POST['name'])){
+if(isset($_POST['name']) && isset($_POST['msg']) && sset($_POST['time'])){
     $query = 'INSERT INTO msg(username,msg,time) VALUES(?,?,?)';
     $stmt = $connect->prepare($query);
     $stmt->bind_param('sss',$_POST['name'], $_POST['msg'], $_POST['time']);
