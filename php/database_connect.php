@@ -10,8 +10,9 @@ $connect->query($query);
 $connect->select_db('Chatroom');
 
 $query = "CREATE TABLE IF NOT EXISTS Users(
-    username VARCHAR(15),
-    password VARCHAR(15)
+  username varchar(15) DEFAULT NULL,
+  password varchar(15) CHARACTER SET latin1 COLLATE latin1_general_cs DEFAULT NULL,
+  UNIQUE KEY username (username)
 )";
 $connect->query($query);
 
