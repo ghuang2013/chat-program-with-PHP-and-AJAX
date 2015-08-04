@@ -5,10 +5,14 @@ session_start();
 if(isset($_POST['name']) && isset($_POST['msg']) && sset($_POST['time'])){
     $query = 'INSERT INTO msg(username,msg,time) VALUES(?,?,?)';
     $stmt = $connect->prepare($query);
-    $stmt->bind_param('sss',$_POST['name'], $_POST['msg'], $_POST['time']);
+    
+    $name = filter_var($_POST['name'],FILTER_SANITIZE_STRING);
+    $msg = filter_var($_POST['msg'],FILTER_SANITIZE_STRING);
+    $time = filter_var($_POST['time'],FILTER_SANITIZE_STRING);
+    
+    $stmt->bind_param('sss',$name, $msg, $time);
     $stmt->execute();
     $stmt->close();
-    exit;
 }else if(isset($_POST['refresh'])){
     $query = 'SELECT username,msg,time FROM Msg LIMIT 50';
     $stmt = $connect->prepare($query);
