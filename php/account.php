@@ -8,9 +8,6 @@ if(isset($_POST['sign_up'])){
     $username = filter_var($_POST['username'],FILTER_SANITIZE_STRING);
     $password = filter_var($_POST['password'],FILTER_SANITIZE_STRING);
 
-    $cost = 10;
-    $salt = strtr(base64_encode(mcrypt_create_iv(16, MCRYPT_DEV_URANDOM)), '+', '.');
-    $salt = sprintf("$2a$%02d$", $cost) . $salt;
     $hashed = crypt($password);
 
     $query = "INSERT INTO Users (username,password) VALUES (?,?)";
