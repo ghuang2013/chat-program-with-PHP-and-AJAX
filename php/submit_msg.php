@@ -25,7 +25,7 @@ if(isset($_POST['name']) && isset($_POST['msg']) && sset($_POST['time'])){
 >>>>>>> dcf4211979cedae7250998211f74dc05f813efab
 }else if(isset($_POST['refresh'])){
     
-    $query = 'SELECT username,msg,time FROM Msg LIMIT 50';
+    $query = 'SELECT username,msg,time FROM Msg';
     $stmt = $connect->prepare($query);
     $stmt->execute();
     $stmt->bind_result($name,$msg,$time);
