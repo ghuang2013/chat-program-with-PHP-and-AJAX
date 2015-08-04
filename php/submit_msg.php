@@ -15,7 +15,12 @@ if(isset($_POST['name'])){
     $stmt->close();
     exit;
 }else if(isset($_POST['refresh'])){
+<<<<<<< HEAD
     $query = "SELECT username,msg,time FROM(SELECT * FROM Msg ORDER BY postID DESC LIMIT 50) TMP ORDER BY postID ASC";
+=======
+    
+    $query = 'SELECT username,msg,time FROM Msg';
+>>>>>>> origin/master
     $stmt = $connect->prepare($query);
     $stmt->execute();
     
