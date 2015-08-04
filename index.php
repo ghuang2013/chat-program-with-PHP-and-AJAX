@@ -76,22 +76,21 @@
             $(document).foundation();   
             update();
             $('#send_message form').on('submit',function(e){
-                var msg = $('input[id=message]').val();
+                $input_field = $('input[id=message]');
+                var msg = $input_field.val();
                 var name = $('#username h6').text();
                 var date = new Date();
                 var time = date.getTime()/1000;
                             
                 e.preventDefault();
-
+                
                 $.ajax({
                     method: 'POST',
                     url: 'php/submit_msg.php',
                     data:{name:name,msg:msg,time:time},
                     success: function(data){
                         update();
-                    },
-                    error: function(error){
-                        alert(error);
+                        $input_field.val("");
                     }
                 });
             });

@@ -7,9 +7,9 @@
         <div class="row">
             <input type="password" name="password" placeholder="password">
         </div>
-        <div class="row">
+<!--        <div class="row">
             <input type="password" placeholder="password_again">
-        </div>
+        </div>-->
         <div class="row">
             <input type="submit" name="sign_up" class="button expand" value="Sign Up">
         </div>
